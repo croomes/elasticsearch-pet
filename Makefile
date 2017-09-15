@@ -1,5 +1,5 @@
-IMAGE_NAME=simonswine/elasticsearch-pet
-IMAGE_TAG=2.3.4
+IMAGE_NAME=croomes/elasticsearch
+IMAGE_TAG=2.4.5
 REPO=$(IMAGE_NAME):$(IMAGE_TAG)
 
 build:
