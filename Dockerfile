@@ -1,9 +1,9 @@
-FROM elasticsearch:2.4.5
+FROM elasticsearch:5.5.2
 
-RUN bin/plugin install lmenezes/elasticsearch-kopf/v2.1.2
-RUN bin/plugin install io.fabric8/elasticsearch-cloud-kubernetes/2.4.5_01
-COPY readonlyrest-1.16.11-pre5_es2.4.5.zip /
-RUN bin/plugin install file:///readonlyrest-1.16.11-pre5_es2.4.5.zip && rm /readonlyrest-1.16.11-pre5_es2.4.5.zip
+#RUN elasticsearch-plugin install lmenezes:elasticsearch-kopf:v2.1.2
+RUN elasticsearch-plugin install io.fabric8:elasticsearch-cloud-kubernetes:5.5.2
+COPY readonlyrest-1.16.11-pre5_es5.5.2.zip /
+RUN elasticsearch-plugin install file:///readonlyrest-1.16.11-pre5_es5.5.2.zip && rm /readonlyrest-1.16.11-pre5_es5.5.2.zip
 
 ENV BOOTSTRAP_MLOCKALL=false NODE_DATA=true NODE_MASTER=true JAVA_OPTS=-Djava.net.preferIPv4Stack=true
 
